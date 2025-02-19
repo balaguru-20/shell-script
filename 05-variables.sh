@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "please enter your username::" #the text entered here will be added as value to the varibale
+echo "please enter your username::" #the text entered here will be added as value to the variable
 
 read -s USERNAME # Here USERNAME is the variable name
 
