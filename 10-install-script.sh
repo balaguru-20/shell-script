@@ -7,9 +7,9 @@ then
     exit 1      #Other than 0
 fi
 
-dnf list installed mysql
+dnf list installed mysql    # checking installed or not
 
-if [ $? -ne 0]
+if  [ $? -ne 0]     # checking installed or not
 then
     dnf install mysql -y
 
@@ -24,9 +24,9 @@ else
     echo "MySQL already ... INSTALLED"
 fi
 
-dnf list installed git
+dnf list installed git  # checking installed or not
 
-if [ $? -ne 0 ]
+if [ $? -ne 0 ]     # checking installed or not
 then
     dnf install git -y
 
