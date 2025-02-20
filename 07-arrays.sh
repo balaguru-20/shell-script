@@ -8,5 +8,5 @@ echo "Second movie is ${MOVIES[1]}"
 echo "Third movie is ${MOVIES[2]}"
 
 echo "All movies are ${MOVIES[@]}"  # '@' means ALL
-echo "Movies names are: ${MOVIES}"
-echo "The second movie is NNTR's ${MOVIES[1]}" 
+echo "Movies names are: ${MOVIES(2)}"
+echo "The second movie is NTR's ${MOVIES[1]}" 
