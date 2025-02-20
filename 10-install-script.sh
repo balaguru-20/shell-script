@@ -7,21 +7,35 @@ then
     exit 1      #Other than 0
 fi
 
-dnf install mysql -y
+dnf list installed mysql
 
-if [ $? -ne 0 ]     # '$?' means checking previous command status success or not if it is '0' success. Otherwise failure
+if [ $? -ne 0]
 then
-    echo "Installing MySQL ... FAILURE"
-    exit 1
+    dnf install mysql -y
+
+    if [ $? -ne 0 ]     # '$?' means checking previous command status success or not if it is '0' success. Otherwise failure
+    then
+        echo "Installing MySQL ... FAILURE"
+        exit 1
+    else
+        echo "Installing MySQL ... SUCCESS"
+    fi
 else
-    echo "Installing MySQL ... SUCCESS"
+    echo "MySQL already ... INSTALLED"
 fi
 
-dnf install git -y
+dnf list installed git
 
 if [ $? -ne 0 ]
 then
-    echo "Installing Git ... FAILURE"
+    dnf install git -y
+
+    if [ $? -ne 0 ]
+    then
+        echo "Installing Git ... FAILURE"
+    else
+        echo "Installing Git ... SUCCESS"
+    fi
 else
-    echo "Installing Git ... SUCCESS"
+    echo "Git already ... INSTALLED"
 fi
