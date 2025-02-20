@@ -7,7 +7,7 @@ then
     exit 1      #Other than 0
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]     # '$?' means checking previous command status success or not if it is '0' success. Otherwise failure
 then
