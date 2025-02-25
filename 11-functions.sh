@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-VALIDATE(){
+VALIDATE(){             #We can write the function anywhere in the program
     if [ $1 -ne 0 ]    
     then
         echo "$2 FAILURE"
