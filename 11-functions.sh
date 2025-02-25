@@ -3,7 +3,7 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    if [ $1 -ne 0 ]     # '$?' means checking previous command status success or not if it is '0' success. Otherwise failure
+    if [ $1 -ne 0 ]    
     then
         echo "$2 FAILURE"
         exit 1
