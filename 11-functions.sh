@@ -20,6 +20,16 @@ else
     echo "MySQL is already ... INSTALLED"
 fi
 
+VALIDATE(){
+    if [ $1 -ne 0 ]    
+    then
+        echo "$2 FAILURE"
+        exit 1
+    else
+        echo "$2 SUCCESS"
+    fi
+}
+
 dnf list installed git  # checking installed or not
 
 if [ $? -ne 0 ]     # checking installed or not
@@ -30,12 +40,3 @@ else
     echo "Git is already ... INSTALLED"
 fi
 
-VALIDATE(){
-    if [ $1 -ne 0 ]    
-    then
-        echo "$2 FAILURE"
-        exit 1
-    else
-        echo "$2 SUCCESS"
-    fi
-}
