@@ -2,9 +2,9 @@
 
 USERID=$(id -u)
 
-R="/e[31m"  #Red
-G="/e[32m"  #Green
-Y="/e[33m"  #Yellow
+R="\e[31m"  #Red
+G="\e[32m"  #Green
+Y="\e[33m"  #Yellow
 
 VALIDATE(){             #We can write the function anywhere in the program
     if [ $1 -ne 0 ]    
