@@ -22,4 +22,22 @@ VALIDATE(){             #We can write the function anywhere in the program
     fi
 }
 
-VALIDATE $? "Installing $package
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+if [ $USERID -ne 0 ]
+then
+    echo -e " $R ERROR:: you must have sudo access to execute this script $N"
+    exit 1      #Other than 0
+fi
+
+for package in $@
+do
+    dnf list installed $package &>>$LOG_FILE_NAME
+    if [ $? -ne 0 ]
+    then
+        dnf install $package -y &>>$LOG_FILE_NAME
+        VALIDATE $? "Insatlling $package"
+    else
+        echo "$package is already $Y ... INSTALLED $N"
+    fi
+done
