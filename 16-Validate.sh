@@ -37,6 +37,7 @@ do
     then
         dnf install $package -y &>>$LOG_FILE_NAME
         VALIDATE $? "Insatlling $package"
+        echo "validate is $VALIDATE"
     else
         echo -e "$package is already $Y ... INSTALLED $N"
     fi
