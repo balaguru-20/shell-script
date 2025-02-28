@@ -18,7 +18,7 @@ VALIDATE(){             #We can write the function anywhere in the program
         echo -e "$2 ... $R FAILURE $N" #-e means enable, $R color cpplying
         exit 1
     else
-        echo -e "$2 ... $G SUCCESS $N"
+        echo -e "$2 ... $G Guru SUCCESS $N"
     fi
 }
 
