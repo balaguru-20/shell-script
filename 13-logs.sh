@@ -7,8 +7,8 @@ G="\e[32m"  #Green
 Y="\e[33m"  #Yellow
 N="\e[0m"   #Normal
 
-LOGS_FOLDER="/var/log/shellscript-logs"
-LOG_FILE=$(echo $0 | cut -d "." -f1 )
+LOGS_FOLDER="/var/log/shellscript-logs" # Path in the linux
+LOG_FILE=$(echo $0 | cut -d "." -f1 )   # It wll takes 13-logs.sh file name before .(dot)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
