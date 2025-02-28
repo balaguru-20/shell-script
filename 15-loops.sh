@@ -13,7 +13,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){             #We can write the function anywhere in the program
-    if [ $1 -ne 0 ]    
+    if [ $1 -ne 0 ]   
     then
         echo -e "$2 ... $R FAILURE $N" #-e means enable, $R color cpplying
         exit 1
@@ -36,7 +36,7 @@ do
     if [ $? -ne 0 ]
     then
         dnf install $package -y &>>$LOG_FILE_NAME
-        VALIDATE $? "Insatlling $package"
+        VALIDATE $? "Insatlling $package" #Calling Validate function
     else
         echo -e "$package is already $Y ... INSTALLED $N"
     fi
