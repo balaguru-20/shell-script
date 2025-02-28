@@ -22,13 +22,18 @@ VALIDATE(){             #We can write the function anywhere in the program
     fi
 }
 
+CHECK_ROOT(){
+    if [ $USERID -ne 0 ]
+    then
+        echo -e " $R ERROR:: you must have sudo access to execute this script $N"
+        exit 1      #Other than 0
+    fi
+    }
+
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-if [ $USERID -ne 0 ]
-then
-    echo -e " $R ERROR:: you must have sudo access to execute this script $N"
-    exit 1      #Other than 0
-fi
+CHECK_ROOT
+
 
 for package in $@   # Have to give the parameters from prompt like $ sudo sh 15-loops.sh git mysql gcc nginx
 do
