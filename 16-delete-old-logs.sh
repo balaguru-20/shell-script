@@ -9,7 +9,7 @@ N="\e[0m"   #Normal
 
 SOURCE_DIR="/home/ec2-user/app-logs"
 
-LOGS_FOLDER="/var/log/shellscript-logs" # Path in the linux
+LOGS_FOLDER="/var/log/shellscript-logs" # Path in the linux     /var/log ]# chown ec2-user:ec2-user -R shellscript-logs/ to change the ownership of the file
 LOG_FILE=$(echo $0 | cut -d "." -f1 )   # It wll takes 13-logs.sh file name before .(dot)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
