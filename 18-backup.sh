@@ -56,7 +56,7 @@ if [ -n "$FILES" ] # -n  means not empty. true if there are files to zip
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" #File name
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip @ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
 else
     echo "No files found older than $DAYS"
 fi
