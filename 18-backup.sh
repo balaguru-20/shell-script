@@ -38,13 +38,13 @@ fi
 
 if [ ! $SOURCE_DIR ]
 then
-    echo "$SOURCE_DIR does not exist"
+    echo "$SOURCE_DIR does not exist ...Please check"
     exit 1
 fi
 
 if [ ! $DEST_DIR ]
 then
-    echo "$DEST_DIR does not exist"
+    echo "$DEST_DIR does not exist ...Please check"
     exit 1
 fi
 
