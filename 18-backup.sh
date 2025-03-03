@@ -52,7 +52,7 @@ echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ -n $FILES ] # -n  means not empty
+if [ -n "$FILES" ] # -n  means not empty
 then
     echo "Files are: $FILES"
 else
