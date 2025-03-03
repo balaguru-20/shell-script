@@ -30,7 +30,7 @@ USAGE(){
 
 mkdir -p /home/ec2-user/shellscript-logs
 
-if [ $# -lt 2] # $# means how it counts how many args provided
+if [ $# -lt 2 ] # $# means how it counts how many args provided
 then
     USAGE
 fi
