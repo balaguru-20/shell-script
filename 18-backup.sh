@@ -50,7 +50,7 @@ then
     if [ -f $ZIP_FILE ]
     then
         echo -e "Successfully created zip file for files older then $DAYS"
-        while read -r filepath
+        while read -r filepath  #Here filepath is the variable name, you can give any name
         do
             echo "Deleting file: $filepath" &>>$LOG_FILE_NAME
             rm -rf $filepath
