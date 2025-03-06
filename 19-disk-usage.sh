@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 DISK_USAGE=$(df -hT | grep xfs)
 DISK_THRESHOLD=5 #real projects will monitor for 70%
