@@ -17,4 +17,3 @@ do
 done <<< $DISK_USAGE
 
 echo -e "Message: $MSG" #-e means it's enables the new line which we mention in the loop MSG variable as \n
-echo "guru $USAGE"
