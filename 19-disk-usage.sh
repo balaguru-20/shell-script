@@ -16,4 +16,6 @@ do
 
 done <<< $DISK_USAGE
 
-echo -e "Message: $MSG" #-e means it's enables the new line which we mention in the loop MSG variable as \n
+echo -e "Message: $MSG" #-e means it's enables the new line which we mention in the loop MSG variable as \n. Yes, if a global variable is modified inside a loop in a shell script, its value remains changed even after the loop exits.
+
+echo "$MSG" | mutt -s "High Disk Usage" balaguravaiah6301@gmail.com
