@@ -7,6 +7,6 @@ while read -r line
 do
     USAGE=$(echo $line |awk -F " " '{print $6F}')
     PARTITION=$(echo $line | awk -F " " '{print $NF}')
-    echo "Partition: $PARTITION , Usage: $USAGE)
+    echo "Partition: $PARTITION , Usage: $USAGE "
 
 done <<< $DISK_USAGE
