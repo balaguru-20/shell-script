@@ -3,7 +3,7 @@
 USERID=$(id -u)
 
 VALIDATE(){             #We can write the function anywhere in the program
-    if [ $1 -ne 0 ]    # $1 is used for conditionsuccess or failure any non-zero value is consider as failure 
+    if [ $1 -ne 0 ]    # $1 is used for condition success or failure any non-zero value is consider as failure 
     then
         echo "$2 FAILURE" # $2 is used for custome massage
         exit 1
