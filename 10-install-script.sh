@@ -9,7 +9,7 @@ fi
 
 dnf list installed mysql    # checking installed or not
 
-if  [ $? -ne 0]     # checking installed or not
+if  [ $? -ne 0 ]     # checking installed or not
 then
     dnf install mysql -y
 
