@@ -65,10 +65,10 @@ dnf list installed zip
 
 if [ $? -ne 0 ]
 then
-    dnf install zip -y
+    dnf install zip -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing zip "
 else
-    echo -e "ZIP is already installed $Y SKIPPING $N"
+    echo -e "ZIP is already installed $Y SKIPPING $N" &>>$LOG_FILE_NAME
 
 fi
 
