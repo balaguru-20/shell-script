@@ -61,7 +61,7 @@ VALIDATE(){
     fi
 }
 
-dnf list installed zip 
+dnf list installed zip &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
