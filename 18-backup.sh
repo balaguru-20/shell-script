@@ -40,6 +40,38 @@ fi
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
+USERID=$(id -u)
+
+CHECK_ROOT(){
+    if [ $USERID -ne 0 ]
+    then
+        echo -e " $R ERROR:: you must have sudo access to install package $N"
+        exit 1      #Other than 0
+    fi
+}
+
+CHECK_ROOT
+
+VALIDATE(){
+    if [$1 -ne 0]
+    then
+        echo -e "$2 ...$R FAILURE $N "
+    else
+        echo -e "$2 ... $G SUCCESS $N"
+    fi
+}
+
+dnf list installed zip 
+
+if [ $? -ne 0 ]
+then
+    dnf install zip -y
+    VALIDATE $? "Installing zip "
+else
+    echo -e "ZIP is already installed $Y SKIPPING $N"
+
+fi
+
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ -n "$FILES" ] # -n  means not empty. true if there are files to zip
