@@ -7,7 +7,7 @@ N="\e[0m"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14} # This is optional. If the user nt providing number of days, we are taking 14 as default
+DAYS=${3:-14} # This is optional. If the user not providing number of days, we are taking 14 as default
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
 LOG_FILE=$(echo $0 | awk -F "/" '{print $NF}' | cut -d "." -f1)
@@ -21,7 +21,7 @@ USAGE(){
 
 mkdir -p /home/ec2-user/shellscript-logs
 
-if [ $# -lt 2 ] # $# means how it counts how many args provided
+if [ $# -lt 2 ] # $# means it counts how many args are provided
 then
     USAGE
 fi
@@ -45,9 +45,9 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 if [ -n "$FILES" ] # -n  means not empty. true if there are files to zip
 then
     echo "Files are: $FILES"
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" #File name
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" #File name creation
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-    if [ -f $ZIP_FILE ]
+    if [ -f $ZIP_FILE ] # -f means file
     then
         echo -e "Successfully created zip file for files older then $DAYS"
         while read -r filepath  #Here filepath is the variable name, you can give any name
