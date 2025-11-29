@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 MOVIES=("pushpa" "devara" "rrr")
 #Array's index starts from '0'. Size is 3
